@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "seeding-mcp"
+version = "0.1.0"
+description = "MCP server for FGC tournament seeding using the start.gg API"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp[cli]",
+    "requests",
+    "python-dotenv",
+]
+
+[project.scripts]
+seeding-mcp = "seeding_mcp.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
